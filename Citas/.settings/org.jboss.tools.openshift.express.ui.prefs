@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+org.jboss.tools.openshift.ApplicationId=549e6cfb5973cacc3f000062
+org.jboss.tools.openshift.ApplicationName=citas
+org.jboss.tools.openshift.Connection=https\://daniel.hernando%40gmail.com@
+org.jboss.tools.openshift.DeployFolder=deployments
+org.jboss.tools.openshift.Domain=danitestcloud
+org.jboss.tools.openshift.RemoteName=origin
