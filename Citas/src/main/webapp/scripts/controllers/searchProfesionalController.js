@@ -1,6 +1,6 @@
 
 
-angular.module('dameCita').controller('SearchMemberController', function($scope, $http, MemberResource ) {
+angular.module('dameCita').controller('SearchProfesionalController', function($scope, $http, ProfesionalResource , CitaResource) {
 
     $scope.search={};
     $scope.currentPage = 0;
@@ -19,7 +19,7 @@ angular.module('dameCita').controller('SearchMemberController', function($scope,
     };
 
     $scope.performSearch = function() {
-        $scope.searchResults = MemberResource.queryAll(function(){
+        $scope.searchResults = ProfesionalResource.queryAll(function(){
             $scope.numberOfPages();
         });
     };

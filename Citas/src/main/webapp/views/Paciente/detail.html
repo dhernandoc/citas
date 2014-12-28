@@ -1,0 +1,40 @@
+<header ng-switch on="$location.path().indexOf('/Pacientes/new') > -1">
+    <h3 ng-switch-when="true">Create a new Paciente</h3>
+    <h3 ng-switch-when="false">View or edit Paciente</h3>
+</header>
+<form id="PacienteForm" name="PacienteForm" class="form-horizontal" role="form">
+    <div ng-show="displayError" class="alert alert-danger">
+        <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
+    </div>
+    
+
+    <div class="form-group" ng-class="{'has-error': PacienteForm.nombre.$invalid}">
+        <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+        <div id="nombreControls" class="col-sm-10">
+            <input id="nombre" name="nombre" type="text" class="form-control" ng-model="paciente.nombre" placeholder="Enter the Paciente Nombre"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': PacienteForm.email.$invalid}">
+        <label for="email" class="col-sm-2 control-label">Email</label>
+        <div id="emailControls" class="col-sm-10">
+            <input id="email" name="email" type="text" class="form-control" ng-model="paciente.email" placeholder="Enter the Paciente Email"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': PacienteForm.telefono.$invalid}">
+        <label for="telefono" class="col-sm-2 control-label">Telefono</label>
+        <div id="telefonoControls" class="col-sm-10">
+            <input id="telefono" name="telefono" type="text" ng-maxlength="12" class="form-control" ng-model="paciente.telefono" placeholder="Enter the Paciente Telefono"></input>
+            <span class="help-block error" ng-show="PacienteForm.telefono.$error.maxlength">maximum length is 12</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="savePaciente" name="savePaciente" class="btn btn-primary" ng-disabled="isClean() || PacienteForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deletePaciente" name="deletePaciente" class="btn btn-danger" ng-show="paciente.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="citas">
+<html lang="en" ng-app="dameCita">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Citas</title>
+	<title>Dame Cita</title>
     <link href="styles/bootstrap.css" rel="stylesheet" media="screen">
     <link href="styles/bootstrap-theme.css" rel="stylesheet" media="screen">
     <link href="styles/main.css" rel="stylesheet" media="screen">
@@ -20,7 +20,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-				    <a class="navbar-brand" href="#">Citas</a>
+				    <a class="navbar-brand" href="#">Dame Cita</a>
 			    </div>
 			</div>
     	</div>
@@ -34,7 +34,10 @@
                     </a>
                     <nav class="sidebar-nav" ng-controller="NavController" role="navigation">
                         <div id="sidebar-entries" class="list-group">
+                        	<a class="list-group-item" ng-class="{active: matchesRoute('Cita')}" href="#/Cita" data-toggle="offcanvas">Cita</a>
                         	<a class="list-group-item" ng-class="{active: matchesRoute('Members')}" href="#/Members" data-toggle="offcanvas">Members</a>
+                        	<a class="list-group-item" ng-class="{active: matchesRoute('Pacientes')}" href="#/Pacientes" data-toggle="offcanvas">Pacientes</a>
+                        	<a class="list-group-item" ng-class="{active: matchesRoute('Profesionals')}" href="#/Profesionals" data-toggle="offcanvas">Profesionals</a>
                         </div>
                     </nav>
                 </div>
@@ -68,9 +71,21 @@
     <script src="scripts/filters/startFromFilter.js"></script>
     <script src="scripts/filters/genericSearchFilter.js"></script>
     <script src="scripts/services/locationParser.js"></script>
+    <script src="scripts/services/CitaFactory.js"></script>
+    <script src="scripts/controllers/newCitaController.js"></script>
+    <script src="scripts/controllers/searchCitaController.js"></script>
+    <script src="scripts/controllers/editCitaController.js"></script>
     <script src="scripts/services/MemberFactory.js"></script>
     <script src="scripts/controllers/newMemberController.js"></script>
     <script src="scripts/controllers/searchMemberController.js"></script>
     <script src="scripts/controllers/editMemberController.js"></script>
+    <script src="scripts/services/PacienteFactory.js"></script>
+    <script src="scripts/controllers/newPacienteController.js"></script>
+    <script src="scripts/controllers/searchPacienteController.js"></script>
+    <script src="scripts/controllers/editPacienteController.js"></script>
+    <script src="scripts/services/ProfesionalFactory.js"></script>
+    <script src="scripts/controllers/newProfesionalController.js"></script>
+    <script src="scripts/controllers/searchProfesionalController.js"></script>
+    <script src="scripts/controllers/editProfesionalController.js"></script>
 </body>
 </html>

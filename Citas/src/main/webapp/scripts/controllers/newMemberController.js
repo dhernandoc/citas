@@ -1,5 +1,5 @@
 
-angular.module('citas').controller('NewMemberController', function ($scope, $location, locationParser, MemberResource ) {
+angular.module('dameCita').controller('NewMemberController', function ($scope, $location, locationParser, MemberResource ) {
     $scope.disabled = false;
     $scope.$location = $location;
     $scope.member = $scope.member || {};

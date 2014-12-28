@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('citas').filter('searchFilter', function() {
+angular.module('dameCita').filter('searchFilter', function() {
 
     function matchObjectProperties(expectedObject, actualObject) {
         var flag = true;

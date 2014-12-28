@@ -1,0 +1,60 @@
+<header ng-switch on="$location.path().indexOf('/Cita/new') > -1">
+    <h3 ng-switch-when="true">Create a new Cita</h3>
+    <h3 ng-switch-when="false">View or edit Cita</h3>
+</header>
+<form id="CitaForm" name="CitaForm" class="form-horizontal" role="form">
+    <div ng-show="displayError" class="alert alert-danger">
+        <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
+    </div>
+    
+
+    <div class="form-group" ng-class="{'has-error': CitaForm.fecha.$invalid}">
+        <label for="fecha" class="col-sm-2 control-label">Fecha</label>
+        <div id="fechaControls" class="col-sm-10">
+            <input id="fecha" name="fecha" type="text" class="form-control" ng-model="cita.fecha" placeholder="Enter the Cita Fecha"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': CitaForm.horaInicio.$invalid}">
+        <label for="horaInicio" class="col-sm-2 control-label">Hora Inicio</label>
+        <div id="horaInicioControls" class="col-sm-10">
+            <input id="horaInicio" name="horaInicio" type="text" ng-maxlength="5" class="form-control" ng-model="cita.horaInicio" placeholder="Enter the Cita Hora Inicio"></input>
+            <span class="help-block error" ng-show="CitaForm.horaInicio.$error.maxlength">maximum length is 5</span>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': CitaForm.horaFin.$invalid}">
+        <label for="horaFin" class="col-sm-2 control-label">Hora Fin</label>
+        <div id="horaFinControls" class="col-sm-10">
+            <input id="horaFin" name="horaFin" type="text" ng-maxlength="5" class="form-control" ng-model="cita.horaFin" placeholder="Enter the Cita Hora Fin"></input>
+            <span class="help-block error" ng-show="CitaForm.horaFin.$error.maxlength">maximum length is 5</span>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': CitaForm.idProfesional_id.$invalid}">
+        <label for="idProfesional_id" class="col-sm-2 control-label">Id Profesional</label>
+        <div id="idProfesionalControls" class="col-sm-10">
+        <select id="idProfesional_id" name="idProfesional_id" class="form-control" ng-model="idProfesionalSelection" ng-options="i.text for i in idProfesionalSelectionList"  >
+            <option value="">Choose a Id Profesional</option>
+        </select>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': CitaForm.idPaciente_id.$invalid}">
+        <label for="idPaciente_id" class="col-sm-2 control-label">Id Paciente</label>
+        <div id="idPacienteControls" class="col-sm-10">
+        <select id="idPaciente_id" name="idPaciente_id" class="form-control" ng-model="idPacienteSelection" ng-options="i.text for i in idPacienteSelectionList"  >
+            <option value="">Choose a Id Paciente</option>
+        </select>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="saveCita" name="saveCita" class="btn btn-primary" ng-disabled="isClean() || CitaForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deleteCita" name="deleteCita" class="btn btn-danger" ng-show="cita.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,98 @@
+<div class="form-horizontal">
+    <h3>Create a new Cita</h3>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-sm-2">
+            <a id="Create" name="Create" class="btn btn-primary" href="#/Cita/new"><span class="glyphicon glyphicon-plus-sign"></span> Create</a>
+        </div>
+    </div>
+</div>
+<hr/>
+<div>
+    <h3>Search for Cita</h3>
+    <form id="CitaSearch" class="form-horizontal">
+        
+
+    <div class="form-group">
+        <label for="fecha" class="col-sm-2 control-label">Fecha</label>
+        <div class="col-sm-10">
+            <input id="fecha" name="fecha" class="form-control" type="text" ng-model="search.fecha" placeholder="Enter the Cita Fecha"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="horaInicio" class="col-sm-2 control-label">Hora Inicio</label>
+        <div class="col-sm-10">
+            <input id="horaInicio" name="horaInicio" class="form-control" type="text" ng-model="search.horaInicio" placeholder="Enter the Cita Hora Inicio"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="horaFin" class="col-sm-2 control-label">Hora Fin</label>
+        <div class="col-sm-10">
+            <input id="horaFin" name="horaFin" class="form-control" type="text" ng-model="search.horaFin" placeholder="Enter the Cita Hora Fin"></input>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="idProfesional" class="col-sm-2 control-label">Id Profesional</label>
+        <div class="col-sm-10">
+            <select id="idProfesional" name="idProfesional" class="form-control" ng-model="search.idProfesional" ng-options="i as i.id for i in idProfesionalList">
+                <option value="">Choose a Id Profesional</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="idPaciente" class="col-sm-2 control-label">Id Paciente</label>
+        <div class="col-sm-10">
+            <select id="idPaciente" name="idPaciente" class="form-control" ng-model="search.idPaciente" ng-options="i as i.id for i in idPacienteList">
+                <option value="">Choose a Id Paciente</option>
+            </select>
+        </div>
+    </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-sm-10">
+                <a id="Search" name="Search" class="btn btn-primary" ng-click="performSearch()"><span class="glyphicon glyphicon-search"></span> Search</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div id="search-results">
+        <div class="table-responsive">
+        <table class="table table-responsive table-bordered table-striped clearfix">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora Inicio</th>
+                    <th>Hora Fin</th>
+                    <th>Id Profesional</th>
+                    <th>Id Paciente</th>
+                </tr>
+            </thead>
+            <tbody id="search-results-body">
+                <tr ng-repeat="result in searchResults | searchFilter:searchResults | startFrom:currentPage*pageSize | limitTo:pageSize">
+                    <td><a href="#/Cita/edit/{{result.id}}">{{result.fecha}}</a></td>
+                    <td><a href="#/Cita/edit/{{result.id}}">{{result.horaInicio}}</a></td>
+                    <td><a href="#/Cita/edit/{{result.id}}">{{result.horaFin}}</a></td>
+                        <td><a href="#/Cita/edit/{{result.id}}">{{result.idProfesional.id}}</a></td>
+                        <td><a href="#/Cita/edit/{{result.id}}">{{result.idPaciente.id}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+        <ul class="pagination pagination-centered">
+        <li ng-class="{disabled:currentPage == 0}">
+            <a id="prev" href ng-click="previous()">«</a>
+        </li>
+        <li ng-repeat="n in pageRange" ng-class="{active:currentPage == n}" ng-click="setPage(n)">
+            <a href ng-bind="n + 1">1</a>
+        </li>
+        <li ng-class="{disabled: currentPage == (numberOfPages() - 1)}">
+            <a id="next" href ng-click="next()">»</a>
+        </li>
+    </ul>
+
+</div>

@@ -16,4 +16,10 @@
 --
 
 -- You can use this file to load seed data into the database using SQL statements
+
 insert into Member (id, name, email, phone_number) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212') 
+insert into Paciente (id, nombre, email, telefono,version) values (0, 'John Smith', 'john.smith@mailinator.com', '2125551212',0); 
+insert into Profesional (id, nombre,version) values (0, 'Perico Perez',0); 
+insert into Cita (id, fecha, horaInicio, horafin, idprofesional_id,idpaciente_id,version) values (0, '12-12-2014', '10:00','11:00',0,0,0);
+--insert into Cita (id, fecha, horaInicio, horafin, idPaciente, idProfesional) values (0, '12-12-2014', '10:00','11:00', 0,0)
+
