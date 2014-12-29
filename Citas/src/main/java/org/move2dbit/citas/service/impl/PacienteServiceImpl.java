@@ -53,6 +53,7 @@ public class PacienteServiceImpl {
        	log.info("Creando Paciente " + paciente.getNombre());
         em.persist(paciente);
         pacienteEventSrc.fire(paciente);    	   
+        log.exiting("Va", "Ahora");
        }
        catch (Throwable th)
        {
