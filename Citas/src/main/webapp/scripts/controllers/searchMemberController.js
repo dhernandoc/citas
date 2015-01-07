@@ -1,6 +1,6 @@
 
 
-angular.module('dameCita').controller('SearchMemberController', function($scope, $http, MemberResource ) {
+angular.module('citas').controller('SearchMemberController', function($scope, $http, MemberResource ) {
 
     $scope.search={};
     $scope.currentPage = 0;

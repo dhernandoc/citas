@@ -1,6 +1,6 @@
 
 
-angular.module('dameCita').controller('EditMemberController', function($scope, $routeParams, $location, MemberResource ) {
+angular.module('citas').controller('EditMemberController', function($scope, $routeParams, $location, MemberResource ) {
     var self = this;
     $scope.disabled = false;
     $scope.$location = $location;

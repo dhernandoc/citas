@@ -1,6 +1,6 @@
 
 
-angular.module('dameCita').controller('EditProfesionalController', function($scope, $routeParams, $location, ProfesionalResource , CitaResource) {
+angular.module('citas').controller('EditProfesionalController', function($scope, $routeParams, $location, ProfesionalResource , CitaResource) {
     var self = this;
     $scope.disabled = false;
     $scope.$location = $location;

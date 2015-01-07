@@ -1,4 +1,4 @@
-angular.module('dameCita').value('locationParser', function(responseHeaders){
+angular.module('citas').value('locationParser', function(responseHeaders){
     // Get the Location header and parse it.
     var locationHeader = responseHeaders('Location');
     var fragments = locationHeader.split('/');

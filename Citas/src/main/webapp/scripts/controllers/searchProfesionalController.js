@@ -1,6 +1,6 @@
 
 
-angular.module('dameCita').controller('SearchProfesionalController', function($scope, $http, ProfesionalResource , CitaResource) {
+angular.module('citas').controller('SearchProfesionalController', function($scope, $http, ProfesionalResource , CitaResource) {
 
     $scope.search={};
     $scope.currentPage = 0;

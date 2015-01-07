@@ -1,5 +1,5 @@
 
-angular.module('dameCita').controller('NewProfesionalController', function ($scope, $location, locationParser, ProfesionalResource , CitaResource) {
+angular.module('citas').controller('NewProfesionalController', function ($scope, $location, locationParser, ProfesionalResource , CitaResource) {
     $scope.disabled = false;
     $scope.$location = $location;
     $scope.profesional = $scope.profesional || {};

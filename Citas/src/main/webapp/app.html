@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="dameCita">
+<html lang="en" ng-app="citas">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Dame Cita</title>
+	<title>Citas</title>
     <link href="styles/bootstrap.css" rel="stylesheet" media="screen">
     <link href="styles/bootstrap-theme.css" rel="stylesheet" media="screen">
     <link href="styles/main.css" rel="stylesheet" media="screen">
@@ -20,7 +20,7 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                     </button>
-				    <a class="navbar-brand" href="#">Dame Cita</a>
+				    <a class="navbar-brand" href="#">Citas</a>
 			    </div>
 			</div>
     	</div>
@@ -30,13 +30,13 @@
                 <!-- sidebar -->
                 <div class="col-xs-6 col-sm-3 well sidebar-offcanvas">
                     <a href="app.html">
-                        <img class="hidden-xs img-responsive" src="img/forge-logo.png" alt="JBoss Forge"></img>
+                        
                     </a>
                     <nav class="sidebar-nav" ng-controller="NavController" role="navigation">
                         <div id="sidebar-entries" class="list-group">
                         	<a class="list-group-item" ng-class="{active: matchesRoute('Cita')}" href="#/Cita" data-toggle="offcanvas">Cita</a>
                         	<a class="list-group-item" ng-class="{active: matchesRoute('Members')}" href="#/Members" data-toggle="offcanvas">Members</a>
-                        	<a class="list-group-item" ng-class="{active: matchesRoute('Pacientes')}" href="#/Pacientes" data-toggle="offcanvas">Pacientes</a>
+                        	<a class="list-group-item" ng-class="{active: matchesRoute('Solicitantes')}" href="#/Solicitantes" data-toggle="offcanvas">Solicitantes</a>
                         	<a class="list-group-item" ng-class="{active: matchesRoute('Profesionals')}" href="#/Profesionals" data-toggle="offcanvas">Profesionals</a>
                         </div>
                     </nav>
@@ -52,8 +52,6 @@
     
     <div id="footer">
         <div class="container">
-            <p>Powered by <a href="http://jboss.org/forge">Forge</a></p>
-            <p><a href="http://glyphicons.com">Glyphicons Free</a> licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         </div>
     </div>
     
@@ -79,10 +77,10 @@
     <script src="scripts/controllers/newMemberController.js"></script>
     <script src="scripts/controllers/searchMemberController.js"></script>
     <script src="scripts/controllers/editMemberController.js"></script>
-    <script src="scripts/services/PacienteFactory.js"></script>
-    <script src="scripts/controllers/newPacienteController.js"></script>
-    <script src="scripts/controllers/searchPacienteController.js"></script>
-    <script src="scripts/controllers/editPacienteController.js"></script>
+    <script src="scripts/services/SolicitanteFactory.js"></script>
+    <script src="scripts/controllers/newSolicitanteController.js"></script>
+    <script src="scripts/controllers/searchSolicitanteController.js"></script>
+    <script src="scripts/controllers/editSolicitanteController.js"></script>
     <script src="scripts/services/ProfesionalFactory.js"></script>
     <script src="scripts/controllers/newProfesionalController.js"></script>
     <script src="scripts/controllers/searchProfesionalController.js"></script>

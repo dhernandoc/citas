@@ -42,7 +42,7 @@ public class Cita implements Serializable
    private Profesional idProfesional;
 
    @ManyToOne
-   private Paciente idPaciente;
+   private Solicitante idSolicitante;
 
    public Long getId()
    {
@@ -149,14 +149,14 @@ public class Cita implements Serializable
       this.idProfesional = idProfesional;
    }
 
-   public Paciente getIdPaciente()
+   public Solicitante getIdSolicitante()
    {
-      return this.idPaciente;
+      return this.idSolicitante;
    }
 
-   public void setIdPaciente(final Paciente idPaciente)
+   public void setIdSolicitante(final Solicitante idSolicitante)
    {
-      this.idPaciente = idPaciente;
+      this.idSolicitante = idSolicitante;
    }
 
 }

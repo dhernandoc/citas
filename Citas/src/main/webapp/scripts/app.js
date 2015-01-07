@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dameCita',['ngRoute','ngResource'])
+angular.module('citas',['ngRoute','ngResource'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/',{templateUrl:'views/landing.html',controller:'LandingPageController'})
@@ -10,9 +10,9 @@ angular.module('dameCita',['ngRoute','ngResource'])
       .when('/Members',{templateUrl:'views/Member/search.html',controller:'SearchMemberController'})
       .when('/Members/new',{templateUrl:'views/Member/detail.html',controller:'NewMemberController'})
       .when('/Members/edit/:MemberId',{templateUrl:'views/Member/detail.html',controller:'EditMemberController'})
-      .when('/Pacientes',{templateUrl:'views/Paciente/search.html',controller:'SearchPacienteController'})
-      .when('/Pacientes/new',{templateUrl:'views/Paciente/detail.html',controller:'NewPacienteController'})
-      .when('/Pacientes/edit/:PacienteId',{templateUrl:'views/Paciente/detail.html',controller:'EditPacienteController'})
+      .when('/Solicitantes',{templateUrl:'views/Solicitante/search.html',controller:'SearchSolicitanteController'})
+      .when('/Solicitantes/new',{templateUrl:'views/Solicitante/detail.html',controller:'NewSolicitanteController'})
+      .when('/Solicitantes/edit/:SolicitanteId',{templateUrl:'views/Solicitante/detail.html',controller:'EditSolicitanteController'})
       .when('/Profesionals',{templateUrl:'views/Profesional/search.html',controller:'SearchProfesionalController'})
       .when('/Profesionals/new',{templateUrl:'views/Profesional/detail.html',controller:'NewProfesionalController'})
       .when('/Profesionals/edit/:ProfesionalId',{templateUrl:'views/Profesional/detail.html',controller:'EditProfesionalController'})
